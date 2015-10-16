@@ -1,0 +1,68 @@
+<head>
+
+<script> function validateForm() { 
+    var x=document.forms["myForm"]["entry.1490883646"].value; 
+    var y=document.forms["myForm"]["entry.103670373"].value; 
+    if (x == null || x == "" || x == "Nome Sposi" || y == null || y == "" || y == "Luogo") {
+            document.getElementById("dialog").style["display"] = "block";
+            return false;
+        } else {
+            submitted = true;
+        }
+    }
+}
+</script> 
+
+</head>
+
+<div id="dialog" title="Error!" style="display:none"> 
+<p>Name and Contact Info must be entered.</p> 
+</div> 
+
+<script type="text/javascript">var submitted=false;</script>
+<iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" onload="if(submitted) {window.location='thankyou.html';}"></iframe> 
+
+<form name="myForm" action="https://docs.google.com/forms/d/1-kt9z4YgLeJom81NLy_suMlpG0pe54Y8KoD9QU5qWwA/formResponse" method="POST" target="hidden_iframe" 
+onsubmit="return validateForm()">
+
+<input type="text" name="entry.1490883646"
+    value="Nome Sposi" onfocus="if (this.value=='Nome Sposi') this.value='';">
+
+<input type="text" name="entry.103670373"
+    value="Luogo" onfocus="if (this.value=='Luogo') this.value='';">   
+
+<input type="date" name="entry.1237702083"
+    value="dd.mm.yyyy" onfocus="if (this.value=='dd.mm.yyyy') this.value='';">   
+
+<input type="text" name="entry.455123436"
+    value="Km teorici" onfocus="if (this.value=='Km teorici') this.value='';">   
+
+<input type="text" name="entry.602335373"
+    value="Autostrada" onfocus="if (this.value=='Autostrada') this.value='';">   
+
+<input type="text" name="entry.1714765116"
+    value="Benzina" onfocus="if (this.value=='Benzina') this.value='';">   
+
+<input type="text" name="entry.1487619713"
+    value="Noleggio" onfocus="if (this.value=='Noleggio') this.value='';">   
+
+<input type="text" name="entry.1388463358"
+    value="Bus" onfocus="if (this.value=='Bus') this.value='';">   
+
+<input type="text" name="entry.504357053"
+    value="Treno" onfocus="if (this.value=='Treno') this.value='';">   
+
+<input type="text" name="entry.1281133848"
+    value="Shuttle" onfocus="if (this.value=='Shuttle') this.value='';">   
+
+<input type="text" name="entry.247481396"
+    value="Aereo" onfocus="if (this.value=='Aereo') this.value='';">   
+
+<input type="text" name="entry.771916883"
+    value="Hotel" onfocus="if (this.value=='Hotel') this.value='';">   
+
+<input type="text" name="entry.87950126"
+    value="Extra" onfocus="if (this.value=='Extra') this.value='';">   
+
+<input type="submit" value="Invia" class="submit"/>    
+</form>

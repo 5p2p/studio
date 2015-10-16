@@ -1,88 +1,38 @@
+<head>
 
-                <form action=
-                "https://docs.google.com/forms/d/1ZYz6h9g1VM-Yhc6biifwoU-nD1uYQ2Pb7LQXQjDJ7bs/formResponse"
-                id="ss-form" method="post" name="ss-form" onsubmit="" target=
-                "_self">
-                    <div class="ss-question-list" role="list" style=
-                    "margin-left: 2em; padding-left: 0">
-                        <div class="ss-form-question errorbox-good" role=
-                        "listitem">
-                            <div class="ss-item ss-text" dir="auto">
-                                <div class="ss-form-entry">
-                                    <label class="ss-q-item-label" for=
-                                    "entry_121408804"></label>
-                                    <div class="ss-q-title">
-                                        <label class="ss-q-item-label" for=
-                                        "entry_121408804">Nome</label>
-                                    </div><label class="ss-q-item-label" for=
-                                    "entry_121408804"></label>
-                                    <div class="ss-q-help ss-secondary-text"
-                                    dir="auto">
-                                        <label class="ss-q-item-label" for=
-                                        "entry_121408804"></label>
-                                    </div><input aria-label="Nome" class=
-                                    "ss-q-short" dir="auto" id=
-                                    "entry_121408804" name="entry.121408804"
-                                    title="" type="text" value="">
-                                    <div class="error-message" id=
-                                    "1549872770_errorMessage"></div>
-                                    <div class="required-message">
-                                        This is a required question
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="ss-form-question errorbox-good" role=
-                        "listitem">
-                            <div class="ss-item ss-text" dir="auto">
-                                <div class="ss-form-entry">
-                                    <label class="ss-q-item-label" for=
-                                    "entry_24139002"></label>
-                                    <div class="ss-q-title">
-                                        <label class="ss-q-item-label" for=
-                                        "entry_24139002">Email</label>
-                                    </div><label class="ss-q-item-label" for=
-                                    "entry_24139002"></label>
-                                    <div class="ss-q-help ss-secondary-text"
-                                    dir="auto">
-                                        <label class="ss-q-item-label" for=
-                                        "entry_24139002"></label>
-                                    </div><input aria-label="Email" class=
-                                    "ss-q-short" dir="auto" id="entry_24139002"
-                                    name="entry.24139002" title="" type="text"
-                                    value="">
-                                    <div class="error-message" id=
-                                    "436521358_errorMessage"></div>
-                                    <div class="required-message">
-                                        This is a required question
-                                    </div>
-                                </div>
-                            </div>
-                        </div><input name="draftResponse" type="hidden" value=
-                        "[,,&quot;7832299421100513834&quot;] "> <input name=
-                        "pageHistory" type="hidden" value="0"> <input name=
-                        "fvv" type="hidden" value="0"> <input name="fbzx" type=
-                        "hidden" value="7832299421100513834">
-                        <div class="ss-item ss-navigate">
-                            <table id="navigation-table">
-                                <tbody>
-                                    <tr>
-                                        <td class=
-                                        "ss-form-entry goog-inline-block" dir=
-                                        "ltr" id="navigation-buttons">
-                                            <input class=
-                                            "jfk-button jfk-button-action" id=
-                                            "ss-submit" name="submit" type=
-                                            "submit" value="Submit">
-                                            <div class=
-                                            "ss-password-warning ss-secondary-text">
-                                            Never submit passwords through
-                                            Google Forms.
-                                            </div>
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
+<script> function validateForm() { 
+    var x=document.forms["myForm"]["entry.121408804"].value; 
+    var y=document.forms["myForm"]["entry.24139002"].value; 
+    if (x == null || x == "" || x == "Nome" || y == null || y == "" || y == "Your Email or Phone No.") {
+            document.getElementById("dialog").style["display"] = "block";
+            return false;
+        } else {
+            submitted = true;
+        }
+    }
+</script> 
+
+</head>
+
+<body style="padding:2rem; font-size: 1.4rem">
+
+                <div id="dialog" title="Error!" style="display:none"> 
+                <p>Name and Contact Info must be entered.</p> 
+                </div> 
+
+                <script type="text/javascript">var submitted=false;</script>
+                <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" onload="if(submitted) {window.location='thankyou.html';}"></iframe> 
+
+                <form name="myForm" action="https://docs.google.com/forms/d/1ZYz6h9g1VM-Yhc6biifwoU-nD1uYQ2Pb7LQXQjDJ7bs/formResponse" method="POST" target="hidden_iframe" 
+                onsubmit="return validateForm()">
+
+                <input type="text" name="entry.121408804" id="entry_121408804" 
+                    value="Nome" onfocus="if (this.value=='Nome') this.value='';">
+
+                <input type="text" name="entry.24139002" id="entry_24139002"
+                    value="Email" onfocus="if (this.value=='Email') this.value='';">   
+
+                <input type="submit" value="Invia" class="submit"/>    
                 </form>
+
+</body>

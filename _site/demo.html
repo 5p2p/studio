@@ -1,0 +1,113 @@
+<title>Demo Google Form</title>
+<style>
+    body {}
+    
+    #pagewrap {}
+    
+    .tableradio {}
+    
+    .sbutton {}
+    
+    .sbutton:hover {}
+    
+    .sbutton:active {}
+    
+    a {}
+    
+    a:hover {}
+</style>
+<link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
+<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+<!-- <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script> -->
+<script>
+    $(function() {
+        $("#dialog").dialog({
+            autoOpen: false,
+            show: {
+                effect: "blind",
+                duration: 1000
+            },
+            hide: {
+                effect: "blind",
+                duration: 1000
+            }
+        });
+    });
+</script>
+<script>
+    function validateForm() {
+        var x=document.forms["myForm"]["entry.121408804"].value; 
+        var y=document.forms["myForm"]["entry.24139002"].value; 
+        if (x == null || x == "" || x == "Enter Full Name" || y == null || y == "" || y == "Your Email or Phone No.") {
+            $(function() {
+                $("#dialog").dialog("open");
+            });
+            return false;
+        } else {
+            submitted = true;
+        }
+    }
+</script>
+</head>
+
+<body>
+    <div id="pagewrap">
+        <h4>Demo form for the <br>Google Form Customization &amp; Validation</h4>
+        <script type="text/javascript">
+            var submitted = false;
+        </script>
+        <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" onload="if(submitted) {window.location='thankyou.html';}"></iframe>
+        <form name="myForm" action="https://docs.google.com/forms/d/1ZYz6h9g1VM-Yhc6biifwoU-nD1uYQ2Pb7LQXQjDJ7bs/formResponse" method="POST" target="hidden_iframe" onsubmit="return validateForm()">
+            <ol style="padding-left: 0">
+                <div dir="ltr">
+                    <label for="entry_121408804">Name
+                        <label for="itemView.getDomIdToLabel()" aria-label="(Required field)"></label> <span> </span></div>
+                <input type="text" name="entry.121408804" value="Enter Full Name" id="entry_121408804" dir="auto" aria-required="true" onfocus="if (this.value=='Enter Full Name') this.value='';">
+                <div dir="ltr">
+                    <label for="entry_24139002">Contact Info </div>
+                <input type="text" name="entry.24139002" value="Your Email or Phone No." id="entry_24139002" dir="auto" onfocus="if (this.value=='Your Email or Phone No.') this.value='';">
+
+
+                <!-- <div dir="ltr">
+                    <label for="entry_1735394145">Comments </div>
+                <textarea name="entry.1735394145" rows="8" cols="0" id="entry_1735394145" dir="auto"></textarea>
+                <div align="left">
+                    <div dir="ltr">
+                        <label for="entry_69751737">
+                            <br>Was this tutorial helpful? </div>
+                    <br>
+                    <div dir="ltr">
+                        </label>
+                        <table class="tableradio" border=0>
+                            <tr>
+                                <td>
+                                    <input id="group_966319296_1" name="entry.966319296" type="radio" value="Yes" aria-label="Yes">
+                                    <label>
+                                        <br>Yes</label>
+                                </td>
+                                <td>
+                                    <input type="radio" name="entry.966319296" value="No" id="group_966319296_2" aria-label="No">
+                                    <label>
+                                        <br>No</label>
+                                </td>
+                            </tr>
+                        </table> -->
+                        <p>
+                            <input type="hidden" name="draftResponse" value="[]">
+                            <input type="hidden" name="pageHistory" value="0">
+                            <div dir="ltr">
+                                <input type="submit" name="submit" value="Confirm" class="sbutton"> </div>
+            </ol>
+        </form>
+        </p>
+        <p>
+            <br> <a href="#" onClick='window.location="view-source:" + window.location.href'>View Source</a> </p>
+        </div>
+        </div>
+    </div>
+    <div id="dialog" title="Error!">
+        <p>Name and Contact Info must be entered.
+            <br>Just type anything. It's just a demo for the tutorial anyways!</p>
+    </div>
+    </div>
+  
